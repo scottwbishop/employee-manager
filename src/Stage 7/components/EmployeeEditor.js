@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 
 class EmployeeEditor extends Component {
-  // constructor
+  constructor() {
+    super();
+
+    this.state = {
+      employee: null
+      originalEmployee: null
+      notModified: true
+    };
+  }
 
   // componentWillReceiveProps
 
@@ -10,13 +18,13 @@ class EmployeeEditor extends Component {
   // save
 
   // cancel
-  
+
   render() {
     return (
       <div className="infoCard">
-        { 
+        {
           this.state.employee
-          ? 
+          ?
           <div>
             <span id="employeeID"> ID: { this.state.employee.id } </span>
             <p id="employeeTitle"> { this.state.originalEmployee.name } </p>
@@ -34,7 +42,7 @@ class EmployeeEditor extends Component {
           :
           <p id="noEmployee"> No Employee Selected </p>
         }
-       
+
       </div>
     )
   }
